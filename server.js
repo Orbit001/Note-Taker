@@ -13,12 +13,12 @@ app.use(express.json());
 
 // GET Route for homepage
 app.get('/', (req, res) =>
-  res.sendFile(path.join(__dirname, './public/index.html'))
+  res.sendFile(path.join(__dirname, '/public/index.html'))
 );
 
 // GET Route for notes page
 app.get('/notes', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/notes.html'));
+  res.sendFile(path.join(__dirname, '/public/notes.html'));
 });
 
 /*FS Functions*/
@@ -65,7 +65,7 @@ app.post('/api/notes', (req, res) => {
 
 // DELETE Route for notes data
 app.delete('/api/notes/:id', (req, res) => {
-  fs.readFile(".\\db\\db.json", 'utf8', (err, data) => {
+  fs.readFile("./db/db.json", 'utf8', (err, data) => {
     if (err) {
       console.error(err);
     } else {
@@ -73,7 +73,7 @@ app.delete('/api/notes/:id', (req, res) => {
       for(i = 0; i < parsedData.length; i++){
         if(parsedData[i].id === req.params.id){ //Makes sure id's match
           parsedData.splice(i, 1);
-          writeToFile(".\\db\\db.json", parsedData);
+          writeToFile("./db/db.json", parsedData);
           if(parsedData.length > 0){
             lastIndex = Number(parsedData[parsedData.length-1].id.split('+',1)[0]);
           } else {
