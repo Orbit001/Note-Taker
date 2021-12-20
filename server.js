@@ -2,6 +2,8 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const app = express();
+const PORT = process.env.port || 3000;
+
 
 
 let storedData = null;
@@ -94,5 +96,5 @@ app.listen(PORT, () => {
       }
     }
   });
-  console.log(`App listening at ${PORT} 🚀`)
+  console.log(`App listening at http://localhost:${PORT} 🚀`)
 });
