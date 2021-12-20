@@ -44,7 +44,7 @@ const readAndAppend = (destination, content) => {
 
 
 app.get('/api/notes', (req, res) => {
-  fs.readFile(".\\db\\db.json", 'utf8', (err, data) => {
+  fs.readFile("./db/db.json", 'utf8', (err, data) => {
     if (err) {
       console.error("Reading " + err);
     } else {
@@ -55,13 +55,13 @@ app.get('/api/notes', (req, res) => {
 
 
 app.post('/api/notes', (req, res) => {
-  readAndAppend('.\\db\\db.json', res);
+  readAndAppend("./db/db.json", res);
   res.json(`${req.method} request received to post to notes`);
 });
 
 
 app.delete('/api/notes/:id', (req, res) => {
-  fs.readFile(".\\db\\db.json", 'utf8', (err, data) => {
+  fs.readFile("./db/db.json", 'utf8', (err, data) => {
     if (err) {
       console.error(err);
     } else {
@@ -69,7 +69,7 @@ app.delete('/api/notes/:id', (req, res) => {
       for(i = 0; i < Retrieveddata.length; i++){
         if(Retrieveddata[i].id === req.params.id){
           Retrieveddata.splice(i, 1);
-          writeToFile(".\\db\\db.json", Retrieveddata);
+          writeToFile("./db/db.json", Retrieveddata);
           if(Retrieveddata.length > 0){
             storedData = Number(Retrieveddata[Retrieveddata.length-1].id.split('+',1)[0]);
           } else {
@@ -84,7 +84,7 @@ app.delete('/api/notes/:id', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  fs.readFile(".\\db\\db.json", 'utf8', (err, data) => { 
+  fs.readFile(".\db\db.json", 'utf8', (err, data) => { 
     if (err) {
       console.error(err);
     } else {
