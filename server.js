@@ -84,7 +84,7 @@ app.delete('/api/notes/:id', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  fs.readFile(".\db\db.json", 'utf8', (err, data) => { 
+  fs.readFile("./db/db.json", 'utf8', (err, data) => { 
     if (err) {
       console.error(err);
     } else {
