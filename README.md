@@ -1,14 +1,12 @@
 # Note Taker!
 ## Description:
 A simple, but user friendly, application running on "Express", "FS", and the "Path" Node modules. With options to save and delete entries through the click of a button, this is about as basic as it gets!
- ## Table of Contents
-
-    Installation
-    Usage
-    Contributing
-    Test Info
-    Questions
-
+  ## Table of Contents
+  - [Installation](#Installation)
+  - [Usage](#Usage)
+  - [Contributing](#Contributing)
+  - [Test Info](#Test-Info)
+  - [Questions](#Questions)
  ## Installation:
 Access deployed page, or, if installing, use "npm install" to make sure you have all the necessary packages, then run server.js!
  ## Usage:
